@@ -69,8 +69,8 @@ export function DiffView({ apiKey }: Props) {
   const [prompt, setPrompt] = useState('');
   const [systemA, setSystemA] = useState('You are a formal assistant. Be concise and professional.');
   const [systemB, setSystemB] = useState('You are a casual assistant. Be friendly and conversational.');
-  const [modelA, setModelA] = useState('grok-3-mini');
-  const [modelB, setModelB] = useState('grok-3-mini');
+  const [modelA, setModelA] = useState('llama-3.3-70b-versatile');
+  const [modelB, setModelB] = useState('llama-3.1-8b-instant');
   const [tempA, setTempA] = useState(0.3);
   const [tempB, setTempB] = useState(0.9);
   const [outputA, setOutputA] = useState('');
@@ -88,7 +88,11 @@ export function DiffView({ apiKey }: Props) {
   const diff = computeDiff(manualMode ? manualA : outputA, manualMode ? manualB : outputB);
   const stats = getDiffStats(diff);
   const hasDiff = diff.length > 0;
-  const MODELS = ['grok-3-mini', 'grok-3', 'grok-2-1212'];
+  const MODELS = [
+  'llama-3.3-70b-versatile',
+  'llama-3.1-8b-instant',
+  'mixtral-8x7b-32768',
+];
   const isLoading = loadingA || loadingB;
 
   const handleRun = useCallback(async () => {
