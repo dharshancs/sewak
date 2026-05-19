@@ -6,9 +6,10 @@ interface Props { apiKey: string; }
 type InputMode = 'text' | 'audio';
 
 const MODELS = [
-  { value: 'grok-3-mini', label: 'Grok-3 Mini' },
-  { value: 'grok-3', label: 'Grok-3' },
-  { value: 'grok-2-1212', label: 'Grok-2' },
+  { value: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70B' },
+  { value: 'llama-3.1-8b-instant', label: 'Llama 3.1 8B (Fast)' },
+  { value: 'mixtral-8x7b-32768', label: 'Mixtral 8x7B' },
+  { value: 'gemma2-9b-it', label: 'Gemma 2 9B' },
 ];
 
 export function InferencePlayground({ apiKey }: Props) {
