@@ -16,8 +16,7 @@ export interface StreamState {
   metrics: StreamMetrics;
 }
 
-const GROK_API_URL = 'https://api.x.ai/v1/chat/completions';
-
+const GROK_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 export function useGrokStream() {
   const [state, setState] = useState<StreamState>({
     output: '',
@@ -42,7 +41,7 @@ export function useGrokStream() {
   const startStream = useCallback(async (
     prompt: string,
     apiKey: string,
-    model: string = 'grok-3-mini',
+    model: string = 'llama-3.3-70b-versatile',
     systemPrompt?: string,
   ) => {
     // Cancel any ongoing stream
